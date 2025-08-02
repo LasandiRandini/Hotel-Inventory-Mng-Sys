@@ -3,7 +3,13 @@ import Login      from './pages/Login.jsx';
 import Dashboard  from './pages/Dashboard.jsx';
 import Inventory  from './pages/Inventory.jsx';
 import Reports    from './pages/Reports.jsx';
+import StockOut from './pages/StockOut.jsx';
+import Dashboard2 from './pages/Dashboard2.jsx';
+import StockIn2 from './pages/StockIn2.jsx';
+import Logs from './pages/Logs.jsx';
 import DashboardBar from './components/layout/DashboardBar.jsx';
+import { store } from './store';
+import { Provider } from 'react-redux';
 //import ProtectedRoute from './routes/ProtectedRoute.jsx';
 
 const DashLayout = () => (
@@ -46,7 +52,42 @@ function App() {
            //   </ProtectedRoute>
             }
           />
-
+          <Route
+            path="dashboard2"
+            element={
+           //   <ProtectedRoute role="OTHER_ADMIN">
+                <Dashboard2 />
+           //   </ProtectedRoute>
+            }
+          />
+           <Route
+            path="stock-in"
+            element={
+           //   <ProtectedRoute role="OTHER_ADMIN">
+                <Provider store={store}>
+      <div className="App">
+        <StockIn2 />
+      </div>
+    </Provider>
+           //   </ProtectedRoute>
+            }
+          />
+                    <Route
+            path="logs"
+            element={
+           //   <ProtectedRoute role="OTHER_ADMIN">
+                <Logs />
+           //   </ProtectedRoute>
+            }
+          />
+<Route
+            path="stock-out"
+            element={
+          //    <ProtectedRoute role="MAIN_ADMIN">
+                <StockOut />
+          //    </ProtectedRoute>
+            }
+          />
      
           <Route
             path="reports"

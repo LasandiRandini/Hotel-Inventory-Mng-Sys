@@ -5,7 +5,11 @@ const DashboardBar = () => {
   // define your navigation entries here
   const links = [
     { to: '/', label: 'Dashboard' },
+    { to: '/dashboard2', label: 'Dashboard 2' },
+    { to: '/logs', label: 'Logs' },
     { to: '/inventory', label: 'Inventory' },
+    { to: '/stock-in', label: 'StockIn2' },
+    { to: '/stock-out', label: 'Stock Out' },
     { to: '/reports', label: 'Reports' },
   ];
 

@@ -10,6 +10,7 @@ const DashboardBar = () => {
     { to: '/inventory', label: 'Inventory' },
     { to: '/stock-in', label: 'StockIn2' },
     { to: '/stock-out', label: 'Stock Out' },
+  //  { to: '/stock-out2', label: 'Stock Out2' },
     { to: '/reports', label: 'Reports' },
   ];
 

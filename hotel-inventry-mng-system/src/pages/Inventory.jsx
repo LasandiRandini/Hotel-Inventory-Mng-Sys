@@ -607,7 +607,7 @@ const HotelInventorySystem = () => {
             </div>
 
             {/* Recent Entries */}
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            {/* <div className="bg-white rounded-xl border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Recent Stock-In Batches</h3>
               <div className="overflow-x-auto max-h-[300px]">
                 <table className="w-full text-sm text-left text-gray-700">
@@ -639,7 +639,7 @@ const HotelInventorySystem = () => {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

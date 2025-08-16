@@ -27,5 +27,4 @@ const stockInService = {
     return response.data;
   }
 };
-
 export default stockInService;

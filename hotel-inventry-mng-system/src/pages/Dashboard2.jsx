@@ -40,9 +40,9 @@ const MOCK_DATA = {
   categoryStock: [
     { category: 'Food', total: 450, available: 420, lowStock: 3, value: 125000 },
     { category: 'Cleaning', total: 280, available: 265, lowStock: 5, value: 45000 },
-    { category: 'Linen', total: 320, available: 310, lowStock: 2, value: 180000 },
-    { category: 'Maintenance', total: 150, available: 140, lowStock: 1, value: 25000 },
-    { category: 'Amenities', total: 50, available: 45, lowStock: 1, value: 15000 }
+    // { category: 'Linen', total: 320, available: 310, lowStock: 2, value: 180000 },
+    // { category: 'Maintenance', total: 150, available: 140, lowStock: 1, value: 25000 },
+    // { category: 'Amenities', total: 50, available: 45, lowStock: 1, value: 15000 }
   ],
   weeklyTrend: [
     { day: 'Mon', stockIn: 25000, stockOut: 15000 },

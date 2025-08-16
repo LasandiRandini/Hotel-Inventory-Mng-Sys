@@ -38,5 +38,35 @@ export const MOCK_STOCK_ENTRIES = [
   { id: 5, date: '2025-07-31', item: 'Detergent', category: 'Cleaning', qty: 25, unit: 'Packet', unitPrice: 120, totalValue: 3000, batchId: 'BATCH-240731005', expiry: '', supplier: 'Cleaning Co.', status: 'Active' }
 ];
 
+// src/data/mockData.js (add to existing file)
+
+export const MOCK_STOCK_OUT_ENTRIES = [
+  { id: 1, date: '2025-08-02', item: 'Milk', category: 'Food', qty: 10, unit: 'Litre', department: 'Kitchen', reason: 'Cooking', batchId: 'BATCH-240802001', expense: 600, status: 'Completed' },
+  { id: 2, date: '2025-08-02', item: 'Toilet Paper', category: 'Cleaning', qty: 20, unit: 'Roll', department: 'Housekeeping', reason: 'Room Service', batchId: 'BATCH-240802002', expense: 500, status: 'Completed' },
+  { id: 3, date: '2025-08-01', item: 'Bath Towels', category: 'Linen', qty: 5, unit: 'Piece', department: 'Housekeeping', reason: 'Guest Room', batchId: 'BATCH-240801003', expense: 1750, status: 'Completed' }
+];
+
+export const MOCK_BATCHES = {
+  1: [ // Milk batches
+    { id: 'B001', stockedDate: '2025-07-20', expiryDate: '2025-08-30', availableQty: 15, costPerUnit: 60, supplier: 'ABC Dairy' },
+    { id: 'B002', stockedDate: '2025-07-27', expiryDate: '2025-09-10', availableQty: 35, costPerUnit: 60, supplier: 'ABC Dairy' },
+    { id: 'B003', stockedDate: '2025-07-25', expiryDate: '2025-09-05', availableQty: 25, costPerUnit: 65, supplier: 'XYZ Dairy' }
+  ],
+  2: [ // Toilet Paper batches
+    { id: 'B004', stockedDate: '2025-08-01', expiryDate: '', availableQty: 80, costPerUnit: 25, supplier: 'Clean Co' },
+    { id: 'B005', stockedDate: '2025-07-28', expiryDate: '', availableQty: 15, costPerUnit: 25, supplier: 'Clean Co' }
+  ],
+  6: [ // Rice batches
+    { id: 'B006', stockedDate: '2025-07-15', expiryDate: '2025-12-01', availableQty: 50, costPerUnit: 80, supplier: 'Rice Mills' },
+    { id: 'B007', stockedDate: '2025-08-01', expiryDate: '2025-12-15', availableQty: 150, costPerUnit: 80, supplier: 'Rice Mills' }
+  ],
+  3: [ // Bath Towels batches
+    { id: 'B008', stockedDate: '2025-07-10', expiryDate: '', availableQty: 20, costPerUnit: 350, supplier: 'Linen Co' },
+    { id: 'B009', stockedDate: '2025-07-20', expiryDate: '', availableQty: 25, costPerUnit: 350, supplier: 'Linen Co' }
+  ]
+};
+
+export const DEPARTMENTS = ['Kitchen', 'Housekeeping', 'Front Desk', 'Maintenance', 'Restaurant', 'Bar', 'Laundry'];
+export const REASONS = ['Cooking', 'Room Service', 'Guest Room', 'Cleaning', 'Maintenance', 'Event', 'Wastage', 'Damage', 'Other'];
 export const CATEGORIES = ['Food', 'Cleaning', 'Linen', 'Maintenance', 'Amenities'];
 export const UNITS = ['Piece', 'Kg', 'Litre', 'Bottle', 'Pack', 'Box', 'Roll', 'Set', 'Meter', 'Gram'];

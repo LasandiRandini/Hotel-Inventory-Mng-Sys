@@ -1,34 +1,31 @@
-import axios from 'axios';
+// src/services/authService.js
+import api from "./api";
 
-const API_URL = 'http://localhost:8080/api/auth'; // adjust to your backend base URL
+const AUTH_PREFIX = "/api/v1/auth";
 
-// Login user
-const login = async (credentials) => {
-  const response = await axios.post(`${API_URL}/login`, credentials);
-
-  // Save user and token to localStorage
-  if (response.data.token) {
-    localStorage.setItem('user', JSON.stringify(response.data));
+const login = async ({ username, password }) => {
+  const { data } = await api.post(`${AUTH_PREFIX}/login`, { username, password });
+  // Expecting: { token, username, role }
+  if (data?.token) {
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify({ username: data.username, role: data.role }));
   }
-
-  return response.data;
+  return { username: data.username, role: data.role, token: data.token };
 };
 
-// Logout user
-const logout = () => {
-  localStorage.removeItem('user');
+const logout = async () => {
+  // if you have a revoke endpoint, call it here
+  // await api.post(`${AUTH_PREFIX}/logout`);
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
 };
 
-// Get current user from localStorage
 const getCurrentUser = () => {
-  return JSON.parse(localStorage.getItem('user'));
+  try {
+    return JSON.parse(localStorage.getItem("user"));
+  } catch {
+    return null;
+  }
 };
 
-// AuthService object
-const authService = {
-  login,
-  logout,
-  getCurrentUser,
-};
-
-export default authService;
+export default { login, logout, getCurrentUser };

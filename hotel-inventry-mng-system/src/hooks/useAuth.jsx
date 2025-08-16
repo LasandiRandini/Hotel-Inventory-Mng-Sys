@@ -1,10 +1,12 @@
+// src/hooks/useAuth.jsx
 import { useSelector } from "react-redux";
 
 export default function useAuth() {
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((s) => s.auth);
   return {
-    isMainAdmin: user?.role === "MAIN_ADMIN",
-    isOtherAdmin: user?.role === "OTHER_ADMIN",
+    isAdmin: user?.role === "ADMIN",
+    isManager: user?.role === "MANAGER",
+    isViewer: user?.role === "VIEWER",
     ...user,
   };
 }

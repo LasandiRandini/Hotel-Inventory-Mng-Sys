@@ -1,10 +1,15 @@
-import { Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+// src/components/ProtectedRoute.jsx
+import React from "react";
+import { Navigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
+export default function ProtectedRoute({ roles = [], children }) {
+  const { username, role } = useAuth();
+  if (!username) return <Navigate to="/login" replace />;
 
-export default function ProtectedRoute({ children, role }) {
-  const { user } = useSelector(s => s.auth); // grabs exactly the `user` field from authSlice's state
-  if (!user) return <Navigate to="/login" />;
-  if (role && user.role !== role) return <Navigate to="/unauthorized" />;
-  return children; //user exists (and has correct role, if required)
+  if (roles.length > 0 && !roles.includes(role)) {
+    return <Navigate to="/403" replace />; // or show a "Forbidden" page
+  }
+
+  return children;
 }

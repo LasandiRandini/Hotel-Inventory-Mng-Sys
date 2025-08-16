@@ -6,6 +6,7 @@ import Reports    from './pages/Reports.jsx';
 import StockOut from './pages/StockOut.jsx';
 import Dashboard2 from './pages/Dashboard2.jsx';
 import StockIn2 from './pages/StockIn2.jsx';
+//import StockOut2 from './pages/StockOut2.jsx';
 import Logs from './pages/Logs.jsx';
 import DashboardBar from './components/layout/DashboardBar.jsx';
 import { store } from './store';
@@ -88,7 +89,14 @@ function App() {
           //    </ProtectedRoute>
             }
           />
-     
+     {/* <Route
+            path="stock-out2"
+            element={
+          //    <ProtectedRoute rol e="MAIN_ADMIN">
+                <StockOut2 />
+          //    </ProtectedRoute>
+            }
+          /> */}
           <Route
             path="reports"
             element={
